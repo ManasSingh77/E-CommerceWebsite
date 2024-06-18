@@ -1,0 +1,259 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50; /* Dark blue-grey */
+  color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Header shadow */
+}
+
+.header-left h1 {
+  margin: 0;
+  color: #e74c3c; /* Manas Mart in red */
+}
+
+.header-center form {
+  display: flex;
+  align-items: center;
+}
+
+.header-center input {
+  border-radius: 8px;
+  padding: 10px;
+  margin-right: 5px;
+  width: 400px; /* Wider search bar */
+  border: 1px solid #ccc; /* Border for input */
+}
+
+.header-center button {
+  padding: 8px 16px;
+  background-color: #e74c3c; /* Red search button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-center button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right form {
+  margin-right: 20px;
+}
+
+.header-right button.yo {
+  padding: 8px 16px;
+  background-color: #e74c3c; /* Red cart button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-right button.yo:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.header-right a {
+  margin-left: 20px; /* Significant gap between cart and hi username */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main styles */
+.main {
+  max-width: 120%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.category {
+  width: calc(20% - 20px); /* Adjusted width to fit more cards per row */
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.category:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  height: 50%; /* 50% height for the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-bottom: 1px solid #ddd; /* Add a bottom border to separate image from text */
+}
+
+.text-container {
+  height: 50%; /* 50% height for the text */
+  padding: 10px;
+}
+
+.text-container h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.text-container p {
+  font-size: 14px;
+  color: #666;
+}
+
+.text-container p.price {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.notAdded {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #007bff;
+}
+
+.added {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #28a745; /* Green color when added to cart */
+}
+
+@media (max-width: 1200px) {
+  .header-center input {
+    width: 300px; /* Adjust search bar width */
+  }
+
+  .categories {
+    gap: 20px; /* Adjust gap between categories */
+  }
+
+  .category {
+    width: calc(33.33% - 20px); /* Adjusted width for three columns */
+  }
+}
+
+@media (max-width: 992px) {
+  .header-center input {
+    width: 250px; /* Adjust search bar width */
+  }
+
+  .category {
+    width: calc(50% - 20px); /* Adjusted width for two columns */
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-center input {
+    width: 200px; /* Adjust search bar width */
+  }
+
+  .category {
+    width: calc(50% - 10px); /* Adjusted width for two columns */
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .header-left, .header-center, .header-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .header-center form {
+    flex-direction: column;
+  }
+
+  .header-center input {
+    width: 100%; /* Full width search bar */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header-right a {
+    margin-left: 0; /* Reduce gap between links */
+  }
+
+  .categories {
+    flex-direction: column;
+  }
+
+  .category {
+    width: 100%; /* Full width for single column */
+  }
+}

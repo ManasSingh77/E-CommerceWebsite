@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ManasMart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: url('/backgroundimage.jpeg') no-repeat center center/cover;">
+    <header>
+        <h2>ManasMart</h2>
+        <div class="line"></div>
+    </header>
+    <div class="container">
+        <h1>Login to Your Account</h1>
+        <div class="form-container">
+            <form action="/login" method="POST" class="form">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="password" name="password" placeholder="Your Password" required>
+                <% if (errorMessage) { %>
+                    <div class="error-message"><%= errorMessage %></div>
+                <% } %>
+                <button class="button" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

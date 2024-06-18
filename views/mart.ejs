@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manas Mart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Manas Mart</h1>
+        </div>
+        <div class="header-center">
+            <form action="/search" method="POST">
+                <input type="hidden" name="name" value="<%= userName %>">
+                <input type="text" name="search" placeholder="Search for products..." required>
+                <!-- <input type="hidden" name="search" value=undefined> -->
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="header-right">
+            <form action="/cart" method="POST">
+                <input type="hidden" name="name" value="<%= userName %>">
+                <button class="yo" type="submit">Cart</button>
+            </form>
+            <a href="#">Hi, <%= userName %></a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="carousel">
+            <img src="/images/image1.webp" class="active">
+            <img src="/images/image2.webp">
+            <img src="/images/image3.webp">
+        </div>
+        <section class="categories">
+            <form action="/Appliances" method="POST">
+                <div class="category" style="background-image: url('/images/Appliances.jpeg');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Appliances">
+                    <div class="category-text"><button type="submit">Appliances</button></div>
+                </div>
+            </form>
+            <form action="/Grocery" method="POST">
+                <div class="category" style="background-image: url('/images/Grocery.jpeg');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Grocery">
+                    <div class="category-text"><button type="submit">Grocery</button></div>
+                </div>
+            </form>
+            <form action="/Clothing" method="POST">
+                <div class="category" style="background-image: url('/images/Clothing.png');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Clothing ">
+                    <div class="category-text"><button type="submit">Clothing</button></div>
+                </div>
+            </form>
+            <form action="/Electronics" method="POST">
+                <div class="category" style="background-image: url('/images/Electronics.jpeg');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Electronics">
+                    <div class="category-text"><button type="submit">Electronics</button></div>
+                </div>
+            </form>
+            <form action="/Books" method="POST">
+                <div class="category" style="background-image: url('/images/Books.jpg');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Books">
+                    <div class="category-text"><button type="submit">Books</button></div>
+                </div>
+            </form>
+            <form action="/Toys" method="POST">
+                <div class="category" style="background-image: url('/images/Toys.jpg');">
+                    <input type="hidden" name="user" value="<%= userName %>">
+                    <input type="hidden" name="search" value="<%= searchTerm %>">
+                    <input type="hidden" name="category" value="Toys">
+                    <div class="category-text"><button type="submit">Toys</button></div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/js/carousel.js"></script>
+</body>
+</html>

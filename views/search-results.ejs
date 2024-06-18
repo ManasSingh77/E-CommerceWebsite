@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/css/styles1.css">
+    <style>
+        .btn{
+            background-color: #2c3e50;
+            border:none;
+            font-size: 1.0em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <form action="/back" method="POST"><button class="btn" type="submit">
+                <input type="hidden" name="name" value="<%= userName %>">
+                <h1>Manas Mart</h1></button> 
+            </form>
+        </div>
+        <div class="header-center">
+            <form action="/search" method="POST">
+                <input type="hidden" name="name" value="<%= userName %>">
+                <input type="text" name="search" placeholder="Search for products..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="header-right">
+            <form action="/cart" method="POST">
+                <input type="hidden" name="name" value="<%= userName %>">
+                <button class="yo" type="submit">Cart</button>
+            </form>
+            <a href="#">Hi, <%= userName %></a>
+        </div>
+    </header>
+    <main class="main">
+        <h2>Search Results</h2>
+        <div class="categories">
+            <% products.forEach(product => { %>
+                <div class="category">
+                    <div class="image-container">
+                        <img src="<%= product.image %>" alt="<%= product.name %>">
+                    </div>
+                    <div class="text-container">
+                        <h3><%= product.name %></h3>
+                        <p><%= product.description %></p>
+                        <p>Price: $<%= product.price %></p>
+                        <p><%= product.category %></p>
+                        <div class="button-container">
+                            <form action="/add-to-cart" method="POST">
+                                <input type="hidden" name="search" value="<%= searchTerm %>">
+                                <input type="hidden" name="user" value="<%= userName %>">
+                                <input type="hidden" name="name" value="<%= product.name %>">
+                                <input type="hidden" name="description" value="<%= product.description %>">
+                                <input type="hidden" name="price" value="<%= product.price %>">
+                                <input type="hidden" name="image" value="<%= product.image %>">
+                                <input type="hidden" name="category" value="<%= category%>">
+                                <% if (check === product.name) { %>
+                                    <button type="submit" class="<%= className %>"><%= result %></button>
+                                <% } else { %>
+                                    <button type="submit" class="notAdded">Add to Cart</button>
+                                <% } %>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>
