@@ -14,7 +14,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect('mongodb://localhost:27017/E-CommerceWebsite')
+mongoose.connect('mongodb+srv://thakurmanas121:f7kFzapBOvuBtZAq@cluster0.dtyiufh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => {
     console.log('Connected to MongoDB');
   })
